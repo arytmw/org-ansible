@@ -1,0 +1,9 @@
+---
+- name: simple playbook to update the system
+  hosts: all
+  become: true
+  tasks:
+    - name: update all packages
+      ansible.builtin.yum:
+        name: "*"
+        state: latest
